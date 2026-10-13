@@ -69,7 +69,7 @@ const descs = {
 };
 
 function seedDemo() {
-  if (q.get('SELECT id FROM products LIMIT 1') || process.env.SEED_DEMO === '0') return;
+  if (q.get('SELECT id FROM products LIMIT 1') || process.env.SEED_DEMO === '0' || (process.env.VERCEL && process.env.SEED_DEMO !== 'force')) return;
   tx(() => {
     const cat = {}, brand = {};
     CATS.forEach(([slug, en, ar, icon], i) => { cat[slug] = Number(q.run('INSERT INTO categories(slug,name_en,name_ar,icon,sort) VALUES (?,?,?,?,?)', slug, en, ar, icon, i).lastInsertRowid); });
