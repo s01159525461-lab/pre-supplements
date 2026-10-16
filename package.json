@@ -14,6 +14,7 @@
     "admin": "node --disable-warning=ExperimentalWarning scripts/set-admin.js",
     "test:wa": "node --disable-warning=ExperimentalWarning scripts/test-whatsapp.js",
     "verify": "node scripts/verify.js",
-    "test:turso": "node --disable-warning=ExperimentalWarning scripts/test-turso.js"
+    "test:turso": "node --disable-warning=ExperimentalWarning scripts/test-turso.js",
+    "seed:demo": "node --disable-warning=ExperimentalWarning scripts/seed-demo.js"
   }
 }
